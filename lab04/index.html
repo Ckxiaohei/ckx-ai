@@ -7,11 +7,25 @@
   <meta name="description" content="蔡铠漩的个人作品集：项目作品、技能方向与联系方式。">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
 </head>
 <body>
 
   <!-- ====================== 左侧固定栏 ====================== -->
   <aside class="sidebar" id="sidebar">
+    <!-- 主题切换：桌面端位于左侧栏右上角，移动端位于顶部栏右侧 -->
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换到深色主题">
+      <svg class="ico ico-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+        stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.1"/>
+        <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6"/>
+      </svg>
+      <svg class="ico ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.4 14.3A8.5 8.5 0 1 1 9.7 3.6a6.9 6.9 0 0 0 10.7 10.7z"/>
+      </svg>
+    </button>
+
     <!-- 移动端顶栏 -->
     <div class="sidebar-bar">
       <a class="bar-name" href="#top" id="bar-name">蔡铠漩</a>

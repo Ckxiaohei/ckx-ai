@@ -25,6 +25,29 @@
   --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 }
 
+/* 深色主题：只覆盖主区色彩变量，左侧栏渐变（--teal-dark / --teal-darker）保持不变 */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #131a18;            /* 主区底色：深墨绿 */
+  --bg-soft: #1c2724;       /* 深色面板 */
+  --white: #202b28;         /* 卡片 / 标签底色（浅色主题下为纯白） */
+  --ink: #e7efeb;           /* 主文字 */
+  --ink-soft: #9cb2a9;      /* 次要文字 */
+  --teal: #52b39b;          /* 强调青绿（深底上提亮） */
+  --teal-deep: #86d2bd;     /* 深底上的文字用青绿 */
+  --line: #2c3b37;          /* 分割线 */
+  --shadow: 0 24px 48px -28px rgba(0, 0, 0, .75);
+}
+
+/* 少量直接写死 rgba 的青绿，深色下需单独提亮 */
+:root[data-theme="dark"] .project-tag {
+  background: rgba(82, 179, 155, .16);
+  border-color: rgba(82, 179, 155, .38);
+}
+:root[data-theme="dark"] .fact-row {
+  border-bottom-color: rgba(134, 210, 189, .22);
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
@@ -176,6 +199,35 @@ section[id] { scroll-margin-top: 24px; }
 }
 .side-contact-list a:hover { color: #fff; }
 .side-contact-list .c-label { color: #8fb0a5; flex: 0 0 auto; }
+
+/* 主题切换按钮：桌面端在左侧栏右上角，移动端在顶部栏右侧 */
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b6154;
+  border: 1px solid rgba(230, 240, 234, .26);
+  border-radius: 50%;
+  color: #e6f0ea;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.theme-toggle:hover {
+  background: #33705f;
+  border-color: var(--teal-bright);
+  transform: translateY(-1px);
+}
+.theme-toggle .ico { display: block; }
+/* 图标表示"将要切换到"的主题：浅色下显示月亮，深色下显示太阳 */
+.theme-toggle .ico-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .ico-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .ico-moon { display: none; }
 
 /* 移动端抽屉遮罩 */
 .menu-overlay {
@@ -715,4 +767,12 @@ a.contact-value:hover { color: var(--teal); }
   .copy-btn { margin-left: 0; }
 
   .footer { flex-direction: column; gap: 4px; }
+
+  /* 主题切换按钮移到顶部栏右侧，与汉堡按钮并排 */
+  .theme-toggle {
+    top: 9px;
+    right: 62px;
+    width: 42px;
+    height: 42px;
+  }
 }
