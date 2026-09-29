@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蔡铠漩 · 个人作品集</title>
+  <meta name="description" content="蔡铠漩的个人作品集：项目作品、技能方向与联系方式。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====================== 左侧固定栏 ====================== -->
+  <aside class="sidebar" id="sidebar">
+    <!-- 移动端顶栏 -->
+    <div class="sidebar-bar">
+      <a class="bar-name" href="#top" id="bar-name">蔡铠漩</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <!-- 栏内容：桌面端常驻，移动端为抽屉 -->
+    <div class="sidebar-inner" id="sidebar-inner">
+      <p class="brand-en" aria-hidden="true">PORTFOLIO · 2026</p>
+
+      <div class="brand">
+        <h1 class="brand-name" id="brand-name">蔡铠漩</h1>
+        <p class="brand-role" id="brand-role">软件工程专业学生</p>
+      </div>
+
+      <div class="side-block">
+        <h2 class="side-title">状态 Status</h2>
+        <p class="side-line" id="side-school">广州软件学院 · 在读</p>
+        <p class="side-line" id="side-location">中国 · 广州</p>
+      </div>
+
+      <div class="side-block">
+        <h2 class="side-title">技能方向 Skills</h2>
+        <ul class="skill-tags" id="skill-tags"></ul>
+      </div>
+
+      <nav class="side-nav" aria-label="页面导航">
+        <a class="side-nav-link is-active" href="#top"><span class="num">00</span>首页</a>
+        <a class="side-nav-link" href="#projects"><span class="num">01</span>项目作品</a>
+        <a class="side-nav-link" href="#about"><span class="num">02</span>关于我</a>
+        <a class="side-nav-link" href="#contact"><span class="num">03</span>联系方式</a>
+      </nav>
+
+      <div class="side-block side-contact">
+        <h2 class="side-title">联系我 Contact</h2>
+        <ul class="side-contact-list" id="side-contact-list"></ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 移动端抽屉遮罩 -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <!-- ====================== 右侧主内容 ====================== -->
+  <main class="main">
+
+    <!-- 开场 -->
+    <section class="hero" id="top">
+      <p class="hero-kicker" id="hero-kicker">HELLO, I'M 蔡铠漩</p>
+      <h2 class="hero-title">把想法做成产品，<br>把数据<em>讲成故事</em>。</h2>
+      <p class="hero-desc" id="hero-desc"></p>
+      <ul class="hero-meta" id="hero-meta"></ul>
+      <a class="hero-link" href="#projects">查看项目作品 ↓</a>
+    </section>
+
+    <!-- 项目作品 -->
+    <section class="section" id="projects">
+      <header class="section-head">
+        <span class="section-num" aria-hidden="true">01</span>
+        <h2 class="section-title">项目作品</h2>
+        <span class="section-sub">Selected Works</span>
+      </header>
+      <div class="project-list" id="project-list"><!-- 由 js/data.js + js/main.js 渲染 --></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <header class="section-head">
+        <span class="section-num" aria-hidden="true">02</span>
+        <h2 class="section-title">关于我</h2>
+        <span class="section-sub">About Me</span>
+      </header>
+      <div class="about-grid">
+        <div class="about-main">
+          <div class="about-text" id="about-text"></div>
+          <ul class="about-chips" id="about-chips"></ul>
+        </div>
+        <aside class="about-facts" id="about-facts"></aside>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section" id="contact">
+      <header class="section-head">
+        <span class="section-num" aria-hidden="true">03</span>
+        <h2 class="section-title">联系方式</h2>
+        <span class="section-sub">Contact</span>
+      </header>
+      <p class="contact-lead">如果你对我的项目感兴趣，或想聊聊合作与机会，欢迎随时联系。</p>
+      <ul class="contact-list" id="contact-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year">2026</span> 蔡铠漩</span>
+      <span>Built with vanilla HTML / CSS / JS</span>
+    </footer>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
